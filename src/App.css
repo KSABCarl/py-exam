@@ -1,0 +1,40 @@
+:root {
+  --green: 120;
+  --dark-s: 10%;
+  --dark-l: 25%;
+  --clr-bg: hsl(var(--green) var(--dark-s) var(--dark-l) / 1);
+  --clr-default: pink;
+  --clr-page-bg: hsl(0deg 0% 60%);
+  --clr-editor-bg: hsl(0deg 0% 12.5%);
+  --clr-text-bg: hsl(0deg 0% 75%);
+  --border-radius: 0.125em;
+  --shadow: 0.125em 0.125em 0.25em black;
+  --shadow-raise: 0.25em 0.25em 0.25em black;
+  --shadow-light: 1pt 1pt 2pt hsl(0deg 0% 20% / 0.5);
+  --transition: all 100ms ease-in-out;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--clr-bg);
+  padding: 1rem;
+}
+
+#fullscreen:fullscreen {
+  background-color: var(--clr-bg);
+}
+
+.spin {
+  animation: spin 2s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
