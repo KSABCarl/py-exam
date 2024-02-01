@@ -147,7 +147,7 @@ const ExamInner = (exam: Exam) => {
               <CodeEditor key={q.id} question={q} onChange={onChange} />
             ) : (
               <EditorProvider>
-                <TextEditor key={q.id} question={q} />
+                <TextEditor key={q.id} question={q} onChange={onChange} />
               </EditorProvider>
             )
           )}
@@ -162,6 +162,7 @@ const ExamInner = (exam: Exam) => {
                 id: "notes",
                 type: "text",
               }}
+              onChange={onChange}
             />
           </EditorProvider>
           <Console />
@@ -179,7 +180,7 @@ const Message = styled.div`
 
 const MainWrapper = styled.div`
   margin: 0 auto;
-  max-width: 100ch;
+  // max-width: 100ch;
   padding: 2rem;
   background-color: var(--clr-page-bg);
   h1 {

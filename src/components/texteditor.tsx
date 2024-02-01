@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Controls } from "./controls";
 import Loader from "./loader";
 import styled from "styled-components";
-import { Question } from "../types";
+import { Answer, Question } from "../types";
 import { Wrapper } from "./wrapper.style";
 import {
   BtnBold,
@@ -19,9 +19,10 @@ import {
 
 interface CodeEditorProps {
   question: Question;
+  onChange: (ans: Answer) => void;
 }
 
-export function TextEditor({ question }: CodeEditorProps) {
+export function TextEditor({ question, onChange }: CodeEditorProps) {
   const { title, id, value, desc } = question;
 
   const [input, setInput] = useState(value.trimEnd());
@@ -29,6 +30,10 @@ export function TextEditor({ question }: CodeEditorProps) {
   useEffect(() => {
     setInput(value.trimEnd());
   }, [value]);
+
+  useEffect(() => {
+    onChange({ id, value: input });
+  }, [input]);
 
   return (
     <Wrapper id={id}>
