@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-import { Controls } from "./controls";
-import Loader from "./loader";
-import styled from "styled-components";
 import { Answer, Question } from "../types";
 import { Wrapper } from "./wrapper.style";
 import {
@@ -16,6 +13,8 @@ import {
   Editor,
   Toolbar,
 } from "react-simple-wysiwyg";
+import { Header } from "../ui/header";
+import { Description } from "../ui/description";
 
 interface CodeEditorProps {
   question: Question;
@@ -23,7 +22,7 @@ interface CodeEditorProps {
 }
 
 export function TextEditor({ question, onChange }: CodeEditorProps) {
-  const { title, id, value, desc } = question;
+  const { title, id, value, desc, p } = question;
 
   const [input, setInput] = useState(value.trimEnd());
 
@@ -37,9 +36,16 @@ export function TextEditor({ question, onChange }: CodeEditorProps) {
 
   return (
     <Wrapper id={id}>
-      <h3>{title}</h3>
-      <p>{desc}</p>
-      <Editor value={input} onChange={(e) => setInput(e.target.value)}>
+      <Header>
+        <h3>{title}</h3>
+        {p && <p>{p}p</p>}
+      </Header>
+      <Description dangerouslySetInnerHTML={{ __html: desc }}></Description>
+      <Editor
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        style={{ color: "black" }}
+      >
         <Toolbar>
           <BtnBold />
           <BtnItalic />

@@ -12,14 +12,17 @@
   --shadow-raise: 0.25em 0.25em 0.25em black;
   --shadow-light: 1pt 1pt 2pt hsl(0deg 0% 20% / 0.5);
   --transition: all 100ms ease-in-out;
+  --clr-btn-bg: rgb(36, 77, 45);
+  --clr-btn-alt-bg: rgb(69, 22, 22);
 }
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: var(--clr-bg);
-  padding: 1rem;
+  /* background-color: var(--clr-bg); */
+  /* padding: 1rem; */
 }
 
 #fullscreen:fullscreen {
@@ -36,5 +39,13 @@ body {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  &.middle {
+    justify-content: center;
   }
 }

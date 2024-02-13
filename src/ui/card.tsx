@@ -1,15 +1,15 @@
-import { ButtonHTMLAttributes, HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 import styled from "styled-components";
 
 type Props = HTMLAttributes<HTMLDivElement> & {
-  chiildren?: ReactNode;
+  children?: ReactNode;
 };
 
 export function Card({ children, ...rest }: Props) {
   return <CardEl {...rest}>{children}</CardEl>;
 }
 
-const CardEl = styled.div`
+export const CardEl = styled.div`
   border-radius: var(--border-radius);
   border: none;
   background: var(--clr-text-bg);

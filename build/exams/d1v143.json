@@ -1,0 +1,50 @@
+{
+  "id": "d1v143",
+  "title": "Prov del 1",
+  "desc": "Prov i Programmering 1, del 1",
+  "dateFrom": "2024-02-12 14:00:00",
+  "dateTo": "2024-02-12 15:15:00",
+  "proctored": false,
+  "questions": [
+    {
+      "id": "p1d1",
+      "title": "1. Datatyper",
+      "type": "text",
+      "value": "",
+      "desc": "<p>Hannes har följande kod:</p><pre>a = 5\nb = 5/2\nc = str(b)\nd = c.split('.')</pre><p>Vilka datatyper är <code>a</code>, <code>b</code>, <code>c</code> och <code>d</code>? Kan du nämna ytterligare någon datatyp och något värde som den kan ha?",
+      "p": 3
+    },
+    {
+      "id": "p1d2",
+      "title": "2. Villkor",
+      "type": "drawing",
+      "value": "",
+      "desc": "<p>Rita ett flödesschema för följande pseudokod:</p><ul><li>Fråga användaren om ett tal (p)</li><li>Om p &gt; 10 skriv ut Bra</li><li>Annars om p &gt; 6 skriv ut Ok</li><li>Annars skriv ut Ej ok</li></ul><p><em>Du får gärna göra på papper om du vill och lämna in. Om du ritar nedan glöm inte att klicka på Spara när du är klar.</em></p>",
+      "p": 2
+    },
+    {
+      "id": "p1d3",
+      "title": "3. Funktioner",
+      "type": "text",
+      "value": "",
+      "desc": "<p>Rut har skrivit följande kod:</p><pre>a = 10\n\ndef f(x):\n\ta = x\n\nb = f(2)\n\nprint(b)\nprint(a)</pre><p>Utskrifterna blir inte riktigt vad hon förväntar sig. Förklara varför det blir så och hur man kan lösa problemen.</p>",
+      "p": 4
+    },
+    {
+      "id": "p1d4",
+      "title": "4. Pseudokod - Prefix",
+      "type": "text",
+      "value": "",
+      "desc": "<p>Skriv pseudokod till ett program som kan beräkna ett uttryck i prefix-form.<br />Programmet ska fråga användaren efter uttrycket som kan t. ex. vara <code>+ 2 5</code> och svaret som ges är <code>7</code>.<br />Programmet ska kunna klara två heltal och operatorerna <code>+</code>, <code>-</code>, <code>*</code> och <code>/</code>.</p><p>För högre betyg så ska programmet klara decimaltal och flera värden så t. ex. <code>/ 18 2 3 0.5</code> ger värdet <code>6</code>.</p>",
+      "p": 6
+    },
+    {
+      "id": "p1d5",
+      "title": "5. Kod - Prefix",
+      "type": "code",
+      "value": "def prefix(uttr):\n\tpass\n\nprint(prefix('* 5 3') == 15)",
+      "desc": "<p>Skriv om pseudokoden från uppgift 4 till Python-kod.<br /><em>Gör gärna fler testfall som den kan köra igenom innan du börjar skriva på funktionen <code>prefix</code></p>",
+      "p": 8
+    }
+  ]
+}

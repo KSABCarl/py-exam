@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "./App.css";
 
-import { Exam } from "./components/exam";
+import { PyExam } from "./components/exam";
 
 function App() {
   useEffect(() => {
@@ -18,7 +18,7 @@ function App() {
 
   return (
     // Add the provider to your app
-    <Exam />
+    <PyExam />
   );
 }
 

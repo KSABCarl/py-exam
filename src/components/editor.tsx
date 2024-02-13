@@ -15,11 +15,9 @@ import { Pause, Play, RefreshCcw } from "react-feather";
 import { Answer, Question } from "../types";
 import { Wrapper } from "./wrapper.style";
 import styled from "styled-components";
-import {
-  compressToUTF16,
-  decompressFromBase64,
-  decompressFromUTF16,
-} from "lz-string";
+import { Fieldset } from "../ui/fieldset";
+import { Header } from "../ui/header";
+import { Description } from "../ui/description";
 
 const editorOptions = {
   enableBasicAutocompletion: true,
@@ -41,7 +39,7 @@ interface CodeEditorProps {
 }
 
 export function CodeEditor({ question, packages, onChange }: CodeEditorProps) {
-  const { title, id, value, desc } = question;
+  const { title, id, value, desc, p } = question;
 
   const [input, setInput] = useState(value.trimEnd());
   const [showOutput, setShowOutput] = useState(false);
@@ -78,17 +76,20 @@ export function CodeEditor({ question, packages, onChange }: CodeEditorProps) {
   }
 
   function reset() {
-    setShowOutput(false);
-    setInput(value.trimEnd());
+    if (window.confirm("Är du säker att du vill rensa din kod?")) {
+      setShowOutput(false);
+      setInput(value.trimEnd());
+    }
   }
 
   return (
     <Wrapper>
-      <h3>{title}</h3>
-      <p>{desc}</p>
-
+      <Header>
+        <h3>{title}</h3>
+        {p && <p>{p}p</p>}
+      </Header>
+      <Description dangerouslySetInnerHTML={{ __html: desc }}></Description>
       {isLoading && <Loader />}
-
       <EditorContainer>
         <AceEditor
           name={id}
@@ -100,6 +101,7 @@ export function CodeEditor({ question, packages, onChange }: CodeEditorProps) {
           setOptions={editorOptions}
           value={input}
           fontSize="12pt"
+          width="auto"
         />
 
         <Controls
@@ -128,7 +130,6 @@ export function CodeEditor({ question, packages, onChange }: CodeEditorProps) {
         />
       </EditorContainer>
       {isAwaitingInput && <Input prompt={prompt} onSubmit={sendInput} />}
-
       {showOutput && (
         <Fieldset>
           <legend>Resultat:</legend>
@@ -150,17 +151,4 @@ const EditorContainer = styled.div`
 const Output = styled.pre`
   margin: 0;
   font-size: 10pt;
-`;
-
-const Fieldset = styled.fieldset`
-  border: none;
-  border-radius: var(--border-radius);
-  background-color: hsl(255 10% 90% / 0.5);
-  legend {
-    color: var(--clr-bg);
-    font-weight: bold;
-    background-color: var(--clr-page-bg);
-    padding: 0.25em 0.5em;
-    border-radius: var(--border-radius);
-  }
 `;

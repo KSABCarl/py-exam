@@ -100,14 +100,14 @@ export default function Console() {
       <Controls
         items={[
           {
-            label: "Clear",
-            icon: <AlignLeft />,
+            label: "Rensa",
+            icon: <AlignLeft size={16} />,
             onClick: clear,
             disabled: isRunning,
           },
           {
-            label: "Reset",
-            icon: <RefreshCcw />,
+            label: "Återställ",
+            icon: <RefreshCcw size={16} />,
             onClick: reset,
           },
         ]}

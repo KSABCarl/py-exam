@@ -12,15 +12,22 @@ export function Button({ children, ...rest }: Props) {
 const ButtonEl = styled.button`
   border-radius: var(--border-radius);
   border: none;
-  background: var(--clr-bg);
+  background: var(--clr-btn-bg);
   color: white;
   display: inline-flex;
   align-items: center;
   font-size: 8pt;
+  font-weight: bold;
   gap: 4pt;
   box-shadow: var(--shadow);
   transition: var(--transition);
   padding-inline-end: 0.5em;
+  cursor: pointer;
+
+  &[disabled] {
+    opacity: 0.75;
+    cursor: not-allowed;
+  }
 
   &:hover {
     transform: translateY(-1px);
@@ -28,6 +35,11 @@ const ButtonEl = styled.button`
     svg {
       box-shadow: none;
     }
+  }
+
+  &.large {
+    font-size: 16pt;
+    background: var(--clr-btn-alt-bg);
   }
 
   svg {

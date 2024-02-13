@@ -41,3 +41,18 @@ export const Wrapper = styled.div`
     }
   }
 `;
+
+export const MainWrapper = styled.div`
+  margin: 0 auto;
+  // max-width: 100ch;
+  padding: 2rem;
+  background-color: var(--clr-page-bg);
+  h1 {
+    font-size: 38pt;
+    margin-top: 0;
+    border-bottom: 4pt dotted currentColor;
+    color: white;
+    font-weight: bold;
+    filter: drop-shadow(1pt 1pt 2pt var(--clr-bg));
+  }
+`;
