@@ -1,0 +1,50 @@
+{
+  "id": "d1v254",
+  "title": "Prov del 1",
+  "desc": "Prov i Programmering 1, del 1 (version 2)",
+  "dateFrom": "2024-02-15 09:35:00",
+  "dateTo": "2024-02-15 10:45:00",
+  "proctored": false,
+  "questions": [
+    {
+      "id": "p3d1",
+      "title": "1. Datatyper",
+      "type": "text",
+      "value": "",
+      "desc": "<p>Ulrika har följande kod:</p><pre>a = 1\nb = 0.99999999999999999\nprint(a == b)</pre><p>sista raden skriver ut <code>True</code>. Vilka datatyper finns representerade i dessa tre rader och varför får hon <code>True</code>?</p>",
+      "p": 3
+    },
+    {
+      "id": "p3d2",
+      "title": "2. Villkor",
+      "type": "drawing",
+      "value": "",
+      "desc": "<p>Gör ett flödesschema över en flödessensor som var 5:e sekund beräknar flödet i ett rör och om flödet understiger <strong>a</strong> l/s så aktiveras ett larm.<p><em>Du får gärna göra på papper om du vill och lämna in. Om du ritar nedan glöm inte att klicka på Spara när du är klar.</em></p>",
+      "p": 2
+    },
+    {
+      "id": "p3d3",
+      "title": "3. Loopar",
+      "type": "text",
+      "value": "",
+      "desc": "<p>Om något ska upprepas så använder man oftast en <code>for</code> eller <code>while</code> loop. Vad är skillnaden och när passar den ena bättre än den andra? Ge ett exempel på en loop.</p>",
+      "p": 4
+    },
+    {
+      "id": "p3d4",
+      "title": "4. Pseudokod - Summering",
+      "type": "text",
+      "value": "",
+      "desc": "<p>Skriv pseudokod för ett program som summerar alla <strong>ental</strong> som förekommer i en text. T.ex skulle texten <code>'hej1 vad h3ter du7'</code> ge summan <code>11</code>. Obs! den behöver inte kunna decimaltal eller flersiffriga tal som <code>31</code> eller <code>121</code> (båda dessa bör räknas som <code>4</code>).</p>",
+      "p": 6
+    },
+    {
+      "id": "p3d5",
+      "title": "5. Kod - Summering",
+      "type": "code",
+      "value": "def summera(text):\n\tpass\n\nprint(summera('5 myr0r är fl3r än 4 11fanter') == 14)",
+      "desc": "<p>Skriv om pseudokoden från uppgift 4 till Python-kod.<br /><em>Gör gärna fler testfall som den kan köra igenom innan du börjar skriva på funktionen <code>summera</code></p>",
+      "p": 8
+    }
+  ]
+}

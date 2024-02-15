@@ -1,2 +1,15 @@
 
 build
+build/*
+build/api.php
+build/asset-manifest.json
+build/index.html
+build/static/js/main.a21ff761.js
+build/static/js/main.a21ff761.js.LICENSE.txt
+build/static/js/main.a21ff761.js.map
+build/static/js/main.a21ff761.js.map
+build/static/js/main.a21ff761.js.LICENSE.txt
+build/static/js/main.a21ff761.js
+build/index.html
+build/asset-manifest.json
+build/api.php

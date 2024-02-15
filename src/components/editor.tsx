@@ -43,15 +43,26 @@ export function CodeEditor({ question, packages, onChange }: CodeEditorProps) {
 
   const [input, setInput] = useState(value.trimEnd());
   const [showOutput, setShowOutput] = useState(false);
+  const [modules, setModules] = useState<{ name: string; content: string }[]>(
+    []
+  );
 
   useEffect(() => {
     setInput(value.trimEnd());
     setShowOutput(false);
+    question.files?.forEach(async (file) => {
+      const content = await fetch(file.url).then((resp) => resp.text());
+      setModules((m) => [...m, { name: file.name, content }]);
+    });
   }, [value]);
 
   useEffect(() => {
     onChange({ id, value: input });
   }, [input]);
+
+  useEffect(() => {
+    watchModules(modules.map((m) => m.name.replace(".py", "")));
+  }, [modules]);
 
   const {
     runPython,
@@ -61,11 +72,16 @@ export function CodeEditor({ question, packages, onChange }: CodeEditorProps) {
     isRunning,
     interruptExecution,
     isAwaitingInput,
+    writeFile,
     sendInput,
     prompt,
+    watchModules,
   } = usePython({ packages });
 
   function run() {
+    modules.forEach((module) => {
+      writeFile(module.name, module.content);
+    });
     runPython(input);
     setShowOutput(true);
   }
@@ -133,10 +149,22 @@ export function CodeEditor({ question, packages, onChange }: CodeEditorProps) {
       {showOutput && (
         <Fieldset>
           <legend>Resultat:</legend>
-          <Output>
-            <code>{stdout}</code>
-            <code className="error">{stderr}</code>
-          </Output>
+          {question.output === "html" ? (
+            <>
+              <HTMLOutput
+                dangerouslySetInnerHTML={{ __html: stdout }}
+              ></HTMLOutput>
+
+              <Output>
+                <code className="error">{stderr}</code>
+              </Output>
+            </>
+          ) : (
+            <Output>
+              <code>{stdout}</code>
+              <code className="error">{stderr}</code>
+            </Output>
+          )}
         </Fieldset>
       )}
     </Wrapper>
@@ -151,4 +179,10 @@ const EditorContainer = styled.div`
 const Output = styled.pre`
   margin: 0;
   font-size: 10pt;
+`;
+
+const HTMLOutput = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 `;

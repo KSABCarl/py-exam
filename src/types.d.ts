@@ -5,6 +5,8 @@ export type Question = {
   value: string;
   desc: string;
   p?: number;
+  output?: "text" | "html";
+  files?: Array<{ name: string; url: string }>;
 };
 
 export type Answer = {

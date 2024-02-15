@@ -1,0 +1,44 @@
+{
+  "id": "d2v172",
+  "title": "Prov del 2",
+  "desc": "Prov i Programmering 1, del 2",
+  "dateFrom": "2024-02-15 09:35:00",
+  "dateTo": "2024-02-15 11:20:00",
+  "proctored": false,
+  "questions": [
+    {
+      "id": "p1d4",
+      "title": "4. Pseudokod - Prefix (från del 1)",
+      "type": "text",
+      "value": "",
+      "desc": "<p>Skriv pseudokod till ett program som kan beräkna ett uttryck i prefix-form.<br />Programmet ska fråga användaren efter uttrycket som kan t. ex. vara <code>+ 2 5</code> och svaret som ges är <code>7</code>.<br />Programmet ska kunna klara två heltal och operatorerna <code>+</code>, <code>-</code>, <code>*</code> och <code>/</code>.</p><p>För högre betyg så ska programmet klara decimaltal och flera värden så t. ex. <code>/ 18 2 3 0.5</code> ger värdet <code>6</code>.</p><p><em>Om du känner dig nöjd med lösningen under del 1 så kan du skippa detta.</em></p>",
+      "p": 6
+    },
+    {
+      "id": "p1d5",
+      "title": "5. Kod - Prefix (från del 1)",
+      "type": "code",
+      "value": "def prefix(uttr):\n\tpass\n\nprint(prefix('* 5 3') == 15)",
+      "desc": "<p>Skriv om pseudokoden från uppgift 4 till Python-kod.<br /><em>Gör gärna fler testfall som den kan köra igenom innan du börjar skriva på funktionen <code>prefix</code></p><p><em>Om du känner dig nöjd med lösningen under del 1 så kan du skippa detta.</em></p>",
+      "p": 8
+    },
+    {
+      "id": "p2d1",
+      "title": "6. Listor",
+      "type": "text",
+      "value": "",
+      "desc": "<p>Vad är det för skillnad mellan en lista och en dictionary? Ge exempel på när den ena är bättre än den andra och hur man skapar variabler av dessa typer.</p><p>Kan du nämna ytterligare någon listtyp?</p>",
+      "p": 4
+    },
+    {
+      "id": "p2d2",
+      "title": "7. 7-segment",
+      "type": "code",
+      "value": "from s7d import display\n\ndisplay(['1111111', '0101010', '1010101','1111000','0000111'])\ndisplay(['1101011','1111100','0000111'], 'blue', 20)",
+      "desc": "<p>Hilda har fått i uppgift att skapa en funktion för att skriva ut text till en rad med sju-segments-displayer till en utställning. En rad har 10 displayer, men det kommer att vara flera rader (troligen inte mer än 10, men Damian har inte bestämt det än). Funktionen ska kunna ta emot text och skriva ut detta till displayerna.</p><p>Damian, som ska använda funktionen, vill kunna skicka citat av Terry Pratchett till funktionen, som t.ex. på följande sätt:</p><pre>import random\n\nquote1 = 'In ancient times cats were worshipped as gods; they have not forgotten this'\nquote2 = 'Wisdom comes from experience. Experience is often a result of lack of wisdom'\nquote3 = 'Real stupidity beats artificial intelligence every time'\nquote4 = 'It would seem that you have no useful skill or talent whatsoever, he said. Have you thought of going into teaching?'\n\nselected = random.choice([quote1, quote2, quote3, quote4])\noutput(selected)</pre><p>Damian har inte krav på både versala (stora) och gemena (små) bokstäver utan det behöver bara gå att läsa. Däremot vill han inte själv konvertera varje tecken till formatet som displayen vill ha. Biblioteket som ska användas saknar documentation mer än ett par exempel. Hilda har experimenterat lite och lyckats skriva <code>HEJ</code>, men hon behöver skriva koden som konverterar texten och delar upp i rader så att det fungerar för Damians utställning. Med <code>help(display)</code> kan lite ytterligare information fås om hur <code>display()</code> kan användas.</p><p>Hjälp Hilda lösa uppgiften.</p>",
+      "p": 8,
+      "output": "html",
+      "files": [{ "name": "s7d.py", "url": "code/s7d.py" }]
+    }
+  ]
+}

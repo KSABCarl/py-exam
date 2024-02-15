@@ -53,7 +53,7 @@ if (isset($_GET['id'])) {
     $name = $data['name'];
     $baseGroup = array_key_exists('baseGroup', $data) ? $data['baseGroup'] : '-';
 
-    $work = R::findOne('work', ' email = ? ', [$email]);
+    $work = R::findOne('work', ' email = ? AND code = ? ', [$email, $_GET['exam']]);
     if ($work) {
         response($work->uid);
     } else {
